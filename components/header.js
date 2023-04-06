@@ -1,7 +1,6 @@
 import Link from "next/link.js";
 import logo from "./img/logo.svg"
 import styles from '../styles/main.module.css'
-import data from '../data.json'
 import Image from 'next/image'
 export default function Header() {
     return(

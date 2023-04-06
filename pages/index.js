@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '@/styles/main.module.css'
-// import './'
 import Link from 'next/link.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { incrementer } from '@/Features/counter/counterSlice.js'

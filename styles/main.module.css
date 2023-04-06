@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     margin: 100px;
-    padding: 20px 50px;
+    padding: 20px 50px 80px 50px;
     border-radius: 10px;
     position: relative
 }
@@ -49,8 +49,8 @@
     height: 50px;
     font-size: 35px;
     padding: 10px;
-    color: #437DFE;
-    background: white;
+    color: #1c64ff;
+    background: #D3DFFA;
     border-radius: 50%;
     position: relative;
     margin: 5px;
@@ -91,4 +91,59 @@
     height: 30px;
     font-size: 20px;
     /* display: flex */
+}
+
+/*LOGIN*/
+.loginPage {
+    background:#E9ECF2;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    display: flex;
+}
+.form > h2 {
+   text-align: center;
+   padding-bottom: 20px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    background: white;
+    padding: 50px 20px;
+    margin: auto;
+    border-radius: 5px
+
+}
+.form > input{
+    padding: 10px;
+    background: #E9ECF2;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    width: 85%;
+    margin: 10px auto
+}
+.form > button {
+    padding: 10px;
+    width: 50%;
+    margin: 15px auto;
+    color: white;
+    background: #437DFE;
+    border: none;
+    border-radius: 2px
+}
+.grey, .grey2 {
+    color: grey;
+    font-size: small;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px
+}
+.grey2 {
+    color: lightgrey;
+    font-size: smaller;
+    padding-top: 50px
 }

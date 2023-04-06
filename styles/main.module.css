@@ -309,7 +309,8 @@
 }
 .flex {
     display: flex;
-    align-items: center
+    align-items: center;
+    gap: 20px
 }
 .flex > * {
     margin: 5px
@@ -321,7 +322,7 @@
     font-weight: 900;
     display: flex;
     align-items: center;
-    position: absolute;
+    position: relative;
     left: 50px
 }
 .allTop {
@@ -337,7 +338,7 @@
     color: #8BA0B2
 }
 .bigWidth {
-    width: max-content    
+    width: 350px    
 }
 .bigWidth > p > span {
     padding: 2px 5px;
@@ -346,4 +347,7 @@
     margin: 5px 2px;
     font-size: small;
     border-radius: 10px
+}
+.badges {
+    width: 450px
 }

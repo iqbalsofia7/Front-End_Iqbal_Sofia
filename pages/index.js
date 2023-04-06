@@ -28,7 +28,7 @@ export default function Home({posts}) {
   rankList.length = 5
   favoriteList.length = 5
   scoreList.length = 5
-  topList.length = 100
+  topList.length = 10
   return (
     <>
       <Head>
@@ -246,7 +246,7 @@ a dark mode.</p>
             <img className={styles.imgRank} src={anime.images.webp.small_image_url} />
             <div className={styles.bigWidth}>
             <p className={styles.width}>{anime.title}</p>
-            <p>{anime.genres.map((item)=>(<span>{item.name}</span>))}</p> 
+            <p className={styles.badges}>{anime.genres.map((item)=>(<span>{item.name}</span>))}</p> 
             </div>
           </div>
           <div>

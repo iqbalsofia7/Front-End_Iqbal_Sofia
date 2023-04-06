@@ -3,7 +3,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    margin: 100px;
+    margin: 50px 100px;
     padding: 20px 50px 80px 50px;
     border-radius: 10px;
     position: relative
@@ -60,7 +60,7 @@
     width: 300px;
 }
 .button {
-    padding: 10px 20px;
+    padding: 10px 30px;
     color: white;
     background: #437DFE;
     border: none;
@@ -68,7 +68,8 @@
     text-align: center;
     margin: auto;
     width: auto;
-    font-weight: 600
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 .button:hover {
     background: #293b62
@@ -108,7 +109,7 @@
 .form {
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    width: 30vw;
     background: white;
     padding: 50px 20px;
     margin: auto;
@@ -146,4 +147,42 @@
     color: lightgrey;
     font-size: smaller;
     padding-top: 50px
+}
+
+.signupButton {
+    padding: 10px;
+    width: auto;
+    margin: 15px auto;
+    color: white;
+    background: #437DFE;
+    border: none;
+    border-radius: 2px
+}
+.loginButton {
+    padding: 10px;
+    width: auto;
+    margin: 15px auto;
+    color: white;
+    background: #437efe00;
+    border: none;
+    border-radius: 2px
+}
+.nav {  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #2B2D42;
+    color: #B3B4D6
+}
+.nav > div {
+    display: flex;
+    gap: 20px
+}
+.link:hover {
+    color: white;
+    cursor: pointer
+}
+.blueLink {
+    color: #437DFE;
+    cursor: pointer;
 }

@@ -18,6 +18,7 @@ export default function Home() {
       </Head>
 
       <main className='all'>
+        
       </main>
     </>
   )

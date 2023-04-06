@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
     <Provider store={store}>
       <>
       <Head>
-        <title>Next JS</title>
+        <title>PROJET</title>
       </Head>
         <Header/>
         <Component {...pageProps} />

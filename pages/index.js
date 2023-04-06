@@ -4,9 +4,10 @@ import Link from 'next/link.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { incrementer } from '@/Features/counter/counterSlice.js'
 import {FaMobile, FaPaintBrush} from "react-icons/fa"
-import {AiFillMessage, AiOutlineSearch} from "react-icons/ai"
+import {AiFillMessage, AiOutlineSearch, AiOutlineShoppingCart} from "react-icons/ai"
 import {BiNetworkChart} from "react-icons/bi"
 import {FiChevronRight} from "react-icons/fi"
+import {CiFaceSmile} from "react-icons/ci"
 import { useState, useEffect } from 'react';
 export default function Home({posts}) {
   // const count = useSelector((state)=>state.counter.value)
@@ -17,8 +18,17 @@ export default function Home({posts}) {
       .then(response => response.json())
       .then(data => setAnimeList(data.data));
   }, []);
-animeList.length = 5
-const sortedAnimeList = [...animeList].sort((a, b) => b.popularity - a.popularity);
+
+  const popularityList = [...animeList].sort((a, b) => b.popularity - a.popularity);
+  const rankList = [...animeList].sort((a, b) => b.rank - a.rank);
+  const topList = [...animeList].sort((a, b) => b.rank - a.rank);
+  const favoriteList = [...animeList].sort((a, b) => b.favorites - a.favorites);
+  const scoreList = [...animeList].sort((a, b) => b.score - a.score);
+  popularityList.length = 5
+  rankList.length = 5
+  favoriteList.length = 5
+  scoreList.length = 5
+  topList.length = 100
   return (
     <>
       <Head>
@@ -86,7 +96,9 @@ a dark mode.</p>
           </div>
     </div>
           <div className={styles.divButton}>
-            <button className={styles.button}>Join Now </button>
+            <Link href='/signup' >
+              <button className={styles.button}>Join Now </button>
+            </Link>
           </div>
         </div>
 
@@ -165,29 +177,96 @@ a dark mode.</p>
 
       <h3 className={styles.titleBig}>TRENDING NOW</h3>
       <div className={styles.cards}>
-      {animeList.map((anime) => {
+      {rankList.map((anime) => {
         return(
         <div key={anime.id} className={styles.card}>
-          <img className={styles.img} src={anime.images.jpg.image_url} />
+          <img className={styles.img} src={anime.images.webp.image_url} />
           <p  className={styles.width}>{anime.title}</p>
+          <span className={styles.cart}><AiOutlineShoppingCart/></span>
         </div>
       )})} 
           
       </div>
       <p className={styles.viewAll}>View All</p>
       
+
+      <h3 className={styles.titleBig}>POPULARITY THIS SEASON</h3>
+      <div className={styles.cards}>
+      {popularityList.map((anima) => {
+        return(
+        <div key={anima.id} className={styles.card}>
+          <img className={styles.img} src={anima.images.jpg.image_url} />
+          <p  className={styles.width}>{anima.title}</p>
+          <span className={styles.cart}><AiOutlineShoppingCart/></span>
+
+        </div>
+      )})} 
+          
+      </div>
+      <p className={styles.viewAll}>View All</p>
+
+
+      <h3 className={styles.titleBig}>UPCOMING NEXT SEASON</h3>
+      <div className={styles.cards}>
+      {scoreList.map((anima) => {
+        return(
+        <div key={anima.id} className={styles.card}>
+          <img className={styles.img} src={anima.images.jpg.image_url} />
+          <p  className={styles.width}>{anima.title}</p>
+          <span className={styles.cart}><AiOutlineShoppingCart/></span>
+        </div>
+      )})} 
+          
+      </div>
+      <p className={styles.viewAll}>View All</p>
+
+
+      <h3 className={styles.titleBig}>ALL TIME POPULAR</h3>
+      <div className={styles.cards}>
+      {favoriteList.map((anima) => {
+        return(
+        <div key={anima.id} className={styles.card}>
+          <img className={styles.img} src={anima.images.jpg.image_url} />
+          <p  className={styles.width}>{anima.title}</p>
+          <span className={styles.cart}><AiOutlineShoppingCart/></span>
+        </div>
+      )})} 
+          
+      </div>
+      <p className={styles.viewAll}>View All</p>
+
+      <h3 className={styles.titleBig}>TOP 100 ANIME</h3>
+      <div className={styles.cardsRank}>
+      {topList.map((anime, index) => {
+        return(
+        <div key={index} className={styles.allTop} >
+          <h4 className={styles.number}>#{index+1}</h4>
+          <div className={styles.cardRank}>
+          <div className={styles.flex}>
+            <img className={styles.imgRank} src={anime.images.webp.small_image_url} />
+            <div className={styles.bigWidth}>
+            <p className={styles.width}>{anime.title}</p>
+            <p>{anime.genres.map((item)=>(<span>{item.name}</span>))}</p> 
+            </div>
+          </div>
+          <div>
+            <CiFaceSmile className={styles.green}/>
+            <p className={styles.lightGrey}> {anime.members} users</p>
+          </div>  
+          <div>
+            <p className={styles.greyColor}> {anime.type}</p>
+            <p className={styles.lightGrey}> {anime.episodes} episodes</p>
+          </div>  
+          <div>
+              <p className={styles.greyColor}>{anime.season} {anime.year }</p>
+              <p className={styles.lightGrey}>{anime.status}</p>
+          </div> 
+          </div>
+        </div>
+      )})} 
+          
+      </div>
       </main>
     </>
   )
 }
-
-// export async function getStaticProps() {
-//   const posts = await fetch('https://api.jikan.moe/v4/anime')
-//   .then(r => r.json())
-
-//   return {
-//     props: {
-//       posts
-//     } // will be passed to the page component as props
-//   }
-// }

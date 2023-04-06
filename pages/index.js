@@ -4,13 +4,21 @@ import Link from 'next/link.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { incrementer } from '@/Features/counter/counterSlice.js'
 import {FaMobile, FaPaintBrush} from "react-icons/fa"
-import {AiFillMessage} from "react-icons/ai"
+import {AiFillMessage, AiOutlineSearch} from "react-icons/ai"
 import {BiNetworkChart} from "react-icons/bi"
 import {FiChevronRight} from "react-icons/fi"
-export default function Home() {
+import { useState, useEffect } from 'react';
+export default function Home({posts}) {
   // const count = useSelector((state)=>state.counter.value)
   // const dispatch = useDispatch()   onClick={()=> dispatch(incrementer())}
-  
+  const [animeList, setAnimeList] = useState([])
+  useEffect(() => {
+    fetch('https://api.jikan.moe/v4/anime')
+      .then(response => response.json())
+      .then(data => setAnimeList(data.data));
+  }, []);
+animeList.length = 5
+const sortedAnimeList = [...animeList].sort((a, b) => b.popularity - a.popularity);
   return (
     <>
       <Head>
@@ -82,8 +90,104 @@ a dark mode.</p>
           </div>
         </div>
 
+      <div className={styles.genres}>
+        <div>
+          <p>Search</p>
+          <label for="search" className={styles.searchInput}>
+            < AiOutlineSearch/> 
+            <input type="search" id="site" name="q" /> 
+          </label>
+        </div>
 
+        <div>
+          <p>Genres</p>
+          <select className={styles.genre}>
+            <option value="Any">Any</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Ecchi">Ecchi</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Mahou Shoujo">Mahou Shoujo</option>
+            <option value="Mecha">Mecha</option>
+            <option value="Music">Music</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Psychological">Psychological</option>
+            <option value="Psychological">Romance</option>
+          </select>
+        </div>
+
+        <div>
+          <p>Year</p>
+          <select className={styles.genre}>
+            <option value="Any">Any</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+          </select>
+        </div>
+
+        
+        <div>
+          <p>Season</p>
+          <select className={styles.genre}>
+            <option value="Any">Any</option>
+            <option value="Winter">Winter</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Fall">Fall</option>
+          </select>
+        </div>
+
+        <div>
+          <p>Format</p>
+          <select className={styles.genre}>
+            <option value="Any">Any</option>
+            <option value="1">Je sais pas</option>
+            <option value="2">Je sais toujours pas</option>
+            <option value="3">Je sais pas non plus</option>
+            <option value="4">On saura jamais</option>
+          </select>
+        </div>
+      </div>
+
+      <h3 className={styles.titleBig}>TRENDING NOW</h3>
+      <div className={styles.cards}>
+      {animeList.map((anime) => {
+        return(
+        <div key={anime.id} className={styles.card}>
+          <img className={styles.img} src={anime.images.jpg.image_url} />
+          <p  className={styles.width}>{anime.title}</p>
+        </div>
+      )})} 
+          
+      </div>
+      <p className={styles.viewAll}>View All</p>
+      
       </main>
     </>
   )
 }
+
+// export async function getStaticProps() {
+//   const posts = await fetch('https://api.jikan.moe/v4/anime')
+//   .then(r => r.json())
+
+//   return {
+//     props: {
+//       posts
+//     } // will be passed to the page component as props
+//   }
+// }

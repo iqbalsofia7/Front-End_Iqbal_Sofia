@@ -14,7 +14,9 @@ export default function Header() {
                 </Link>
                 <div>
                     <p className={styles.link}>Search</p>
-                    <p className={styles.link}>Social</p>
+                    <Link href='./social' >
+                        <p className={styles.link}>Social</p>
+                    </Link>
                     <p className={styles.link}>Forum</p>
                 </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link.js";
 import styles from '../styles/main.module.css'
 // import style from '../styles/main.module.css'
 
@@ -6,16 +7,15 @@ function login(props) {
     return (
         <div className={styles.loginPage}>
             <div className={styles.form}>
-                <h2>Sign up to AniList</h2>
+                <h2>Login</h2>
                 <input type='email' placeholder='Email' required />
-                <input type='text' placeholder='Username' required />
                 <input type='password' placeholder='Password' required />
-                <input type='password' placeholder='Confirm Password' required />
                 <div className={styles.grey}>
                     <input type='checkbox' /><span>You agree to our terms of service</span>
                 </div>
-                <button>Sign Up</button>
-                <p className={styles.grey2}>Login - Resend Verification Email</p>
+                <button>Login</button>
+                <p className={styles.grey2}>Forgot password ?</p>
+                <p className={styles.grey2}>Not registered ? <Link href='/signup'><span className={styles.blueLink}>Create an account</span></Link></p>
             </div>
         </div>
     );

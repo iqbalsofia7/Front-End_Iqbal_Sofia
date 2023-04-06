@@ -179,8 +179,10 @@ a dark mode.</p>
       <div className={styles.cards}>
       {rankList.map((anime) => {
         return(
-        <div key={anime.id} className={styles.card}>
+        <div key={anime.mal_id} className={styles.card}>
+          <Link href={`/${anime.mal_id}`}>
           <img className={styles.img} src={anime.images.webp.image_url} />
+          </Link>
           <p  className={styles.width}>{anime.title}</p>
           <span className={styles.cart}><AiOutlineShoppingCart/></span>
         </div>

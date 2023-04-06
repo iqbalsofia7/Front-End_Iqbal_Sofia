@@ -1,3 +1,7 @@
+/* @font-face {
+  font-family: Police ;
+  src: url("../public/fonts/police.ttf");
+} */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,11 +12,16 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  /* font-family: "Police"; */
+  /* background: #ff0000; */
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+li {
+  list-style: none;
 }
 
 /*Pages */

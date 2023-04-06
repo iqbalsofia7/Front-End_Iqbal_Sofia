@@ -4,6 +4,8 @@ import Header from '@/components/header.js'
 import Footer from '@/components/footer.js'
 import Head from 'next/head'
 import '@/styles/globals.css'
+// import localFont from 'next/font/local'
+
 
 export default function App({ Component, pageProps }) {
 

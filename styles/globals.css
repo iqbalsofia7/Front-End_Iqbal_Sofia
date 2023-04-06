@@ -23,7 +23,10 @@ a {
 li {
   list-style: none;
 }
-
+h2, h4  {
+  font-weight: 100;
+  letter-spacing: 1px
+}
 /*Pages */
 
 /*Components*/

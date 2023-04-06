@@ -1,0 +1,94 @@
+.platform {
+    background: #0D1723;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 100px;
+    padding: 20px 50px;
+    border-radius: 10px;
+    position: relative
+}
+.platform > div > h2, .platform > div > p {
+    text-align: center;
+}
+.platform > div > p {
+    width: 400px;
+    margin: auto;
+    padding: 5px;
+    line-height: 22px;
+    color: #5a6e83;
+}
+.item > div > div > p {
+    color: #5a6e83;
+}
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+.item {
+    width : 45%;
+    display: flex;
+    justify-content: center;
+    padding: 5px
+    /* gap: 10px */
+}
+.icon {
+    position: relative;
+    display: flex;
+    /* background: red; */
+    padding: 5px 10px;
+    align-items: center;
+    border-radius: 5px
+}
+.icon > * {
+    padding: 0 5px
+}
+.icons {
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+    padding: 10px;
+    color: #437DFE;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    margin: 5px;
+    /* bottom: 10px */
+}
+.text {
+    width: 300px;
+}
+.button {
+    padding: 10px 20px;
+    color: white;
+    background: #437DFE;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    margin: auto;
+    width: auto;
+    font-weight: 600
+}
+.button:hover {
+    background: #293b62
+    
+}
+.divButton {
+    margin: auto;
+    display: flex;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%)
+    
+}
+.arrow {
+    background: white;
+    color: #437DFE;
+    border-radius: 50%;        
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    /* display: flex */
+}

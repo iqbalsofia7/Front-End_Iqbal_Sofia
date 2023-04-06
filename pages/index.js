@@ -1,9 +1,13 @@
 import Head from 'next/head'
 import styles from '@/styles/main.module.css'
+// import './'
 import Link from 'next/link.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { incrementer } from '@/Features/counter/counterSlice.js'
-
+import {FaMobile, FaPaintBrush} from "react-icons/fa"
+import {AiFillMessage} from "react-icons/ai"
+import {BiNetworkChart} from "react-icons/bi"
+import {FiChevronRight} from "react-icons/fi"
 export default function Home() {
   // const count = useSelector((state)=>state.counter.value)
   // const dispatch = useDispatch()   onClick={()=> dispatch(incrementer())}
@@ -18,7 +22,68 @@ export default function Home() {
       </Head>
 
       <main className='all'>
-        
+        <div className={styles.platform}>
+
+          <div>
+            <h2>The next-generation anime platform</h2>
+            <p>Track, share, and discover your favorite anime and manga with AniList.</p>
+          </div>
+
+<div className={styles.items}>
+          <div className={styles.item}>
+            <div className={styles.icon}>
+            <BiNetworkChart className={styles.icons}/>
+            <div className={styles.text} >
+              <h4>Discover your obsessions</h4>
+              <p>What are your highest rated genres or most
+watched voice actors? Follow your watching
+habits over time with in-depth statistics.</p>
+            </div>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            <div className={styles.icon}>
+            <FaMobile className={styles.icons}/>
+            <div className={styles.text}>
+              <h4>Bring AniList anywhere</h4>
+              <p>Keep track of your progress on-the-go with
+one of many AniList apps across iOS,
+Android, macOS, and Windows.</p>
+            </div>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            <div className={styles.icon}>
+            <AiFillMessage className={styles.icons}/>
+            <div className={styles.text}>
+              <h4>Join the conversation</h4>
+              <p>Share your thoughts with our thriving
+community, make friends, socialize, and
+receive recommendations.</p>
+            </div>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            <div className={styles.icon}>
+            <FaPaintBrush className={styles.icons}/>
+            <div className={styles.text}>
+              <h4>Tweak it to your liking</h4>
+              <p>Customize your scoring system, title format,
+color scheme, and much more! Also, we have
+a dark mode.</p>
+            </div>
+            </div>
+          </div>
+    </div>
+          <div className={styles.divButton}>
+            <button className={styles.button}>Join Now </button>
+          </div>
+        </div>
+
+
       </main>
     </>
   )

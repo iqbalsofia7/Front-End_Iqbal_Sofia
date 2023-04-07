@@ -9,6 +9,7 @@ import {BiNetworkChart} from "react-icons/bi"
 import {FiChevronRight} from "react-icons/fi"
 import {CiFaceSmile} from "react-icons/ci"
 import { useState, useEffect } from 'react';
+import Carrousel from '../components/carrousel.js'
 export default function Home({posts}) {
   // const count = useSelector((state)=>state.counter.value)
   // const dispatch = useDispatch()   onClick={()=> dispatch(incrementer())}
@@ -39,6 +40,7 @@ export default function Home({posts}) {
       </Head>
 
       <main className='all'>
+        <Carrousel />
         <div className={styles.platform}>
 
           <div>
@@ -185,6 +187,13 @@ a dark mode.</p>
           </Link>
           <p  className={styles.width}>{anime.title}</p>
           <span className={styles.cart}><AiOutlineShoppingCart/></span>
+
+          <div className={styles.none}>
+              <h5>{anime.type}  {anime.status} </h5>
+              <p>{anime.genres.map((item)=>(<span className={styles.spanBadges}>{item.name}</span>))}</p>
+              <p>{anime.source}</p>
+              <div className={styles.triangle}></div>
+          </div>
         </div>
       )})} 
           
@@ -200,7 +209,12 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           <p  className={styles.width}>{anima.title}</p>
           <span className={styles.cart}><AiOutlineShoppingCart/></span>
-
+          <div className={styles.none}>
+              <h5>{anima.type}  {anima.status} </h5>
+              <p>{anima.genres.map((item)=>(<span className={styles.spanBadges}>{item.name}</span>))}</p>
+              <p>{anima.source}</p>
+              <div className={styles.triangle}></div>
+          </div>
         </div>
       )})} 
           
@@ -216,6 +230,13 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           <p  className={styles.width}>{anima.title}</p>
           <span className={styles.cart}><AiOutlineShoppingCart/></span>
+
+          <div className={styles.none}>
+              <h5>{anima.type}  {anima.status} </h5>
+              <p>{anima.genres.map((item)=>(<span className={styles.spanBadges}>{item.name}</span>))}</p>
+              <p>{anima.source}</p>
+              <div className={styles.triangle}></div>
+          </div>
         </div>
       )})} 
           
@@ -231,6 +252,13 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           <p  className={styles.width}>{anima.title}</p>
           <span className={styles.cart}><AiOutlineShoppingCart/></span>
+
+            <div className={styles.none}>
+              <h5>{anima.type}  {anima.status} </h5>
+              <p>{anima.genres.map((item)=>(<span className={styles.spanBadges}>{item.name}</span>))}</p>
+              <p>{anima.source}</p>
+              <div className={styles.triangle}></div>
+          </div>
         </div>
       )})} 
           

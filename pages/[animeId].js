@@ -23,8 +23,10 @@ export default function Anime() {
                 <div className={styles.abs}>
                     <div>
                     <img className={styles.img} src={item.images.webp.image_url} />
+                    <div className={styles.flexx}>
                     <button className={styles.addtoList}>Add to List</button> 
-                    <span className={styles.heart}><AiFillHeart/></span>
+                    <p className={styles.heart}><AiFillHeart/></p>
+                    </div>
                    </div>
                    <div className={styles.end}>
                         <div>

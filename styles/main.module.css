@@ -536,7 +536,10 @@
 }
 .h4 {
     width: 200px;
-    padding: 10px
+    padding: 10px;
+    letter-spacing: 0;
+    font-weight: 800;
+    color: #647380;
 }
 .flexx {
     display: flex;
@@ -630,7 +633,8 @@
 .iframe {
     border-radius: 2px;
     margin: 5px;
-    padding: 5px
+    padding: 5px;
+    color: #8BA0B2;
 }
 .padd {
     margin-top: 20px

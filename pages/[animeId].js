@@ -186,7 +186,7 @@ export default function Anime() {
                         <Image className={styles.immg} src={act6} />
                     </div>
                     </div>
-                    <h4 className={styles.h4 + ' ' + styles.padd}>Trailers</h4>
+                    <h4 className={styles.h4 + ' ' + styles.padd}>Trailer</h4>
                     <div> {item.trailer.embed_url ? (
                         <div>
                             <iframe className={styles.iframe} title={item.title} src={item.trailer.embed_url} width="300" height="200" frameborder="0" allowfullscreen></iframe>

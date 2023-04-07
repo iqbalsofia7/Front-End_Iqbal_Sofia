@@ -433,26 +433,81 @@
 /**/
 .bg {
     width: 100vw;
-    height: 25vh;
+    height: 30vh;
     background: #8BA0B2;
     position: relative;
 }
+
 .abs {
-    position: absolute;
-    top: 30vh;
-    left: 100px;
+    position: relative;
+    top: -10vh;
+    left: 100px; 
     display: flex;
-    gap: 10px
+    gap: 10px;
 }
 .end {
     display: flex;
     align-items: center;
     line-height: 25px;
     margin: 10px;
-    color:  #647380
+    color:  #647380;
+    flex-direction: column;
+}
+.linkAnime {
+    margin: 10px;
+    margin-top: 50px;
+    display: flex;
+    width: 50vw;
+    justify-content: space-between
+}
+.linkAnime > p {
+    margin: 2px;
 }
 .end > div > h2 {
     padding: 15px 0px;  
+}
+.down {
+    /* background: red; */
+    color: black;
+    padding: 10px 100px;
+    position: relative;
+    top: -50px;
+    left: -10px
+}
+.side {
+    padding: 10px;
+    color:  #8BA0B2;
+}
+.side > h4 {
+    color: #647380;
+    font-weight: 600;
+    padding: 2px 0px
+}
+.side > p {
+    font-size: 15px;
+    padding: 5px 0
+}
+.sidebar {
+    width: 190px;
+    background: white;
+    border-radius: 5px;
+    margin: 10px 10px 0px 10px
+}
+.siide {
+    padding: 5px;
+    font-size: 13px;
+    color: #647380;
+    background: white;
+    border-radius: 5px;
+    width: 190px;
+    margin: 10px 10px 0px 10px;
+}
+.red {
+    color: red;
+    font-size: 15px
+}
+.wwidth {
+    width: 900px
 }
 .heart {
     color: white;
@@ -495,6 +550,9 @@
     transform: translateY(-50%);
     transform: rotate(45deg);
 }
+.h2t {
+    color: white;
+}
 
 
 .slides {
@@ -520,5 +578,6 @@
     margin: auto;
     text-align: center;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    align-items: center
 }

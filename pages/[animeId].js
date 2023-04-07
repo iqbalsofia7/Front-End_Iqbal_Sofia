@@ -93,7 +93,11 @@ export default function Anime() {
                             </div>
                             <div className={styles.side}>
                                 <h4>Studios </h4>
-                                <p>{item.studios.name}</p>
+                                {item.studios && item.studios.length > 0 ? (
+                                <p>{item.studios[0].name}</p> 
+                                ) : (
+                                <p>Pas de Studios</p>
+                                )}
                             </div>
                         </div>
                     </div> {/* left */}

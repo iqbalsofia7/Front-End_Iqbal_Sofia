@@ -467,12 +467,12 @@
     padding: 15px 0px;  
 }
 .down {
-    /* background: red; */
     color: black;
     padding: 10px 100px;
     position: relative;
     top: -50px;
-    left: -10px
+    left: -10px;
+    display: flex
 }
 .side {
     padding: 10px;
@@ -509,6 +509,16 @@
 .wwidth {
     width: 900px
 }
+.left {
+    /* background: red; */
+    width: min-content
+}
+.right {
+    padding: 15px;
+    margin: 5px auto;
+    border-radius: 5px;
+    width: 100%
+}
 .heart {
     color: white;
     background: red;
@@ -519,14 +529,20 @@
     margin: 5px;
     margin-right: 0px;
     font-size: 20px;
-    text-align: center
+    text-align: center;
 }
 .heart:hover {
-    color: black    
+    color: black;
+}
+.h4 {
+    width: 200px;
+    padding: 10px
 }
 .flexx {
     display: flex;
     align-items: center;
+    margin: auto;
+
 }
 .addtoList {
     padding: 10px 5px;
@@ -554,7 +570,9 @@
     color: white;
 }
 
-
+.down {
+    display: flex;
+}
 .slides {
     margin: auto;
     display: flex;
@@ -581,3 +599,68 @@
     justify-content: center;
     align-items: center
 }
+
+
+.right {
+    flex-wrap: wrap;
+    /* justify-content: space-between */
+    width: 80vw;
+    flex-wrap: wrap;
+}
+.immg {
+    width: 60px;
+    height: 80px;
+    border-radius: 2px
+}
+.fflex {
+    display: flex;
+    justify-content: space-bewtween;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+}
+.charact {
+    display: flex;
+    width: 45%;
+    background: white;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 5px
+}
+.iframe {
+    border-radius: 2px;
+    margin: 5px;
+    padding: 5px
+}
+.padd {
+    margin-top: 20px
+}
+.flexD {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    color: #647380;
+    /* width: 10% */
+}
+.flexD > p {
+    margin-bottom: 25px;
+    margin-top: 5px
+}
+.flexDD {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    color: #8BA0B2;
+    /* flex-direction: column */
+}
+.cnter {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+/* .greyColor {
+    color: #647380;
+}
+.lightGrey {
+    color: #8BA0B2
+} */

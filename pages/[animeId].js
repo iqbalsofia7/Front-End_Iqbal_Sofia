@@ -37,7 +37,7 @@ export default function Anime() {
                 </div>
                 </div>
             ) : (
-            <div>Loading...</div>
+            <div className={styles.loading}>Loading...</div>
             )}
         </div>
         );

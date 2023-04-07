@@ -206,7 +206,9 @@ a dark mode.</p>
       {popularityList.map((anima) => {
         return(
         <div key={anima.id} className={styles.card}>
+          <Link href={`/${anima.mal_id}`}>
           <img className={styles.img} src={anima.images.jpg.image_url} />
+          </Link>
           <p  className={styles.width}>{anima.title}</p>
           <span className={styles.cart}><AiOutlineShoppingCart/></span>
           <div className={styles.none}>
@@ -227,7 +229,9 @@ a dark mode.</p>
       {scoreList.map((anima) => {
         return(
         <div key={anima.id} className={styles.card}>
+           <Link href={`/${anima.mal_id}`}>
           <img className={styles.img} src={anima.images.jpg.image_url} />
+          </Link>
           <p  className={styles.width}>{anima.title}</p>
           <span className={styles.cart}><AiOutlineShoppingCart/></span>
 
@@ -249,7 +253,9 @@ a dark mode.</p>
       {favoriteList.map((anima) => {
         return(
         <div key={anima.id} className={styles.card}>
+          <Link href={`/${anima.mal_id}`}>
           <img className={styles.img} src={anima.images.jpg.image_url} />
+          </Link>
           <p  className={styles.width}>{anima.title}</p>
           <span className={styles.cart}><AiOutlineShoppingCart/></span>
 

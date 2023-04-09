@@ -9,12 +9,19 @@ import { useState, useEffect } from 'react';
 
 
 export default function App({ Component, pageProps }) {
+  
+
+
   const [animeList, setAnimeList] = useState([])
+  const [link, setLink] = useState('viewAll')
   useEffect(() => {
     fetch('https://api.jikan.moe/v4/anime')
       .then(response => response.json())
       .then(data => setAnimeList(data.data));
   }, []);
+  const showTrend =()=>{
+    setLink('trendingNow')
+  }
   return (
     <Provider store={store}>
       <>
@@ -22,7 +29,7 @@ export default function App({ Component, pageProps }) {
         <title>PROJET</title>
       </Head>
         <Header/>
-        <Component {...pageProps} animeList={animeList} />
+        <Component link={link} showTrend={showTrend}{...pageProps} animeList={animeList} />
         <Footer/>
       </>
     </Provider>

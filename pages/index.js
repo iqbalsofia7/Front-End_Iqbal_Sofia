@@ -10,9 +10,11 @@ import {FiChevronRight} from "react-icons/fi"
 import {CiFaceSmile} from "react-icons/ci"
 import { useState, useEffect } from 'react';
 import Carrousel from '../components/carrousel.js'
-export default function Home({posts}) {
+export default function Home({posts}, props) {
   // const count = useSelector((state)=>state.counter.value)
   // const dispatch = useDispatch()   onClick={()=> dispatch(incrementer())}
+  // const [link, setLink] = useState('viewAll')
+  const link = props.link
   const [animeList, setAnimeList] = useState([])
   useEffect(() => {
     fetch('https://api.jikan.moe/v4/anime')
@@ -30,6 +32,8 @@ export default function Home({posts}) {
   favoriteList.length = 5
   scoreList.length = 5
   topList.length = 10
+
+
   return (
     <>
       <Head>
@@ -198,8 +202,9 @@ a dark mode.</p>
       )})} 
           
       </div>
-      <p className={styles.viewAll}>View All</p>
-      
+      <Link href='/trendingNow' onClick={props.showTrend}>
+      <p className={styles.viewAll} onClick={props.showTrend} >View All</p>
+      </Link>
 
       <h3 className={styles.titleBig}>POPULARITY THIS SEASON</h3>
       <div className={styles.cards}>
@@ -221,8 +226,9 @@ a dark mode.</p>
       )})} 
           
       </div>
-      <p className={styles.viewAll}>View All</p>
-
+      <Link href='/popularityThisSeason'>
+      <p className={styles.viewAll} onClick={props.showTrend} >View All</p>
+      </Link>
 
       <h3 className={styles.titleBig}>UPCOMING NEXT SEASON</h3>
       <div className={styles.cards}>
@@ -245,8 +251,9 @@ a dark mode.</p>
       )})} 
           
       </div>
-      <p className={styles.viewAll}>View All</p>
-
+      <Link href='/upcomingNextSeason'>
+      <p className={styles.viewAll} onClick={props.showTrend} >View All</p>
+      </Link>
 
       <h3 className={styles.titleBig}>ALL TIME POPULAR</h3>
       <div className={styles.cards}>
@@ -269,8 +276,10 @@ a dark mode.</p>
       )})} 
           
       </div>
-      <p className={styles.viewAll}>View All</p>
 
+      <Link href='/allTimePopular'>
+      <p className={styles.viewAll} onClick={props.showTrend} >View All</p>
+      </Link>
       <h3 className={styles.titleBig}>TOP 100 ANIME</h3>
       <div className={styles.cardsRank}>
       {topList.map((anime, index) => {

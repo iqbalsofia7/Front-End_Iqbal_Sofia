@@ -13,20 +13,33 @@ import Carrousel from '../components/carrousel.js'
 export default function Home({posts}, props) {
   // const count = useSelector((state)=>state.counter.value)
   // const dispatch = useDispatch()   onClick={()=> dispatch(incrementer())}
-  // const [link, setLink] = useState('viewAll')
-  const link = props.link
+  // const [link, setLink] = useState('viewAll')   
   const [animeList, setAnimeList] = useState([])
   useEffect(() => {
     fetch('https://api.jikan.moe/v4/anime')
       .then(response => response.json())
       .then(data => setAnimeList(data.data));
   }, []);
+  const [searchValue, setSearchValue] = useState('');
+  const [selectedGenre, setSelectedGenre] = useState('');
+  const handleSearchInputChange = (event) => {
+    setSearchValue(event.target.value);
+  };
 
-  const popularityList = [...animeList].sort((a, b) => b.popularity - a.popularity);
-  const rankList = [...animeList].sort((a, b) => b.rank - a.rank);
-  const topList = [...animeList].sort((a, b) => b.rank - a.rank);
-  const favoriteList = [...animeList].sort((a, b) => b.favorites - a.favorites);
-  const scoreList = [...animeList].sort((a, b) => b.score - a.score);
+  const handleGenreSelect = (event) => {
+    setSelectedGenre(event.target.value);
+  };
+
+  const filteredList = animeList.filter((anime) => {
+    return (anime.title.toLowerCase().includes(searchValue.toLowerCase()) &&
+    (selectedGenre === '' ? true : anime.genres.map(genre => genre.name.toLowerCase()).includes(selectedGenre.toLowerCase())))
+    });
+  
+  const popularityList = [...filteredList].sort((a, b) => b.popularity - a.popularity);
+  const rankList = [...filteredList].sort((a, b) => b.rank - a.rank);
+  const topList = [...filteredList].sort((a, b) => b.rank - a.rank);
+  const favoriteList = [...filteredList].sort((a, b) => b.favorites - a.favorites);
+  const scoreList = [...filteredList].sort((a, b) => b.score - a.score);
   popularityList.length = 5
   rankList.length = 5
   favoriteList.length = 5
@@ -113,14 +126,14 @@ a dark mode.</p>
           <p>Search</p>
           <label for="search" className={styles.searchInput}>
             < AiOutlineSearch/> 
-            <input type="search" id="site" name="q" /> 
+            <input type="search" id="site" name="q" value={searchValue} onChange={handleSearchInputChange}  /> 
           </label>
         </div>
 
         <div>
           <p>Genres</p>
-          <select className={styles.genre}>
-            <option value="Any">Any</option>
+          <select className={styles.genre} value={selectedGenre} onChange={handleGenreSelect}>
+            <option value="">Any</option>
             <option value="Action">Action</option>
             <option value="Adventure">Adventure</option>
             <option value="Comedy">Comedy</option>
@@ -139,7 +152,7 @@ a dark mode.</p>
 
         <div>
           <p>Year</p>
-          <select className={styles.genre}>
+          <select className={styles.genre}  >
             <option value="Any">Any</option>
             <option value="2024">2024</option>
             <option value="2023">2023</option>

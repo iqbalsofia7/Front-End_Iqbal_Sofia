@@ -4,7 +4,7 @@ import styles from '../styles/main.module.css'
 import Image from 'next/image'
 import {AiFillMessage, AiOutlineSearch, AiOutlineShoppingCart} from "react-icons/ai"
 import { useSelector, useDispatch } from 'react-redux'
-export default function Header() {
+export default function Header(props) {
     const count = useSelector((state)=>state.counter.value)
     return(
         <header>
@@ -25,11 +25,11 @@ export default function Header() {
                 </div>
 
                 <div>
-                    <Link href='/connexion' >
-                        <button className={styles.loginButton}>Login</button>
+                    <Link href='/login' >
+                        <button className={styles.loginButton} onClick={props.changeLog2}>Login</button>
                     </Link>
-                    <Link href='/connexion' >
-                        <button className={styles.signupButton}>Sign Up</button>
+                    <Link href='/SignUp' >
+                        <button className={styles.signupButton} onClick={props.changeLog}>Sign Up</button>
                     </Link>
                 </div>
                 <div className={styles.alignCenter}>

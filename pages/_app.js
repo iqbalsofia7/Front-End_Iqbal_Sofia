@@ -10,7 +10,16 @@ import { useState, useEffect } from 'react';
 
 export default function App({ Component, pageProps }) {
   
+  const [log, setLog] = useState('connexion')
+  const changeLog = (event) => {
+    event.preventDefault();
+    setLog('inscription');
+  };
+    const changeLog2 =(event)=>{
+    setLog('connexion')
+    event.preventDefault();
 
+  }
 
   const [animeList, setAnimeList] = useState([])
   const [link, setLink] = useState('viewAll')
@@ -29,7 +38,7 @@ export default function App({ Component, pageProps }) {
         <title>PROJET</title>
       </Head>
         <Header/>
-        <Component link={link} showTrend={showTrend}{...pageProps} animeList={animeList} />
+        <Component link={link} showTrend={showTrend}{...pageProps} animeList={animeList} log={log} changeLog={changeLog} changeLog2={changeLog2}  />
         <Footer/>
       </>
     </Provider>

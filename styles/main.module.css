@@ -760,3 +760,19 @@
     font-weight: 800;
 
 }
+.logout {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #437DFE;
+    color: white;
+    font-weight: 400;
+    border: none
+}
+.logout:hover {
+    background: white;
+    color: #437DFE;
+    font-weight: 600;
+}

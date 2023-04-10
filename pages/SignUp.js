@@ -2,10 +2,11 @@ import React from 'react';
 import styles from '../styles/main.module.css'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser, setLoggedIn   } from '../Features/counter/counterSlice.js';
+import { addUser, setLoggedIn, clearCurrentUser   } from '../Features/counter/counterSlice.js';
 
 function Signup(props) {
     const loggedIn = useSelector((state)=>state.counter.loggedIn)
+    const currentUser = useSelector((state) => state.counter.currentUser);
     const dispatch = useDispatch();
     const [formValues, setFormValues] = useState({
         email: '',
@@ -24,9 +25,10 @@ function Signup(props) {
             dispatch(addUser(newUser));
             dispatch(setLoggedIn(true));
         }
-
-        // const user = useSelector(state => state.counter.users);
-        // console.log(user)
+        const handleLogout = () => {
+            dispatch(setLoggedIn(false));
+            dispatch(clearCurrentUser());
+        };
     if(loggedIn == false) {
     return (
         <div className={styles.loginPage}>
@@ -45,10 +47,11 @@ function Signup(props) {
         </div>
     );
     } 
-    if (loggedIn == true ) {
+    if (loggedIn == true) {
         return(
         <div className={styles.loginPage}>
-            <h2 className={styles.bienvenue}>Bienvenue {formValues.username}</h2>
+            <h2 className={styles.bienvenue}>Welcome {formValues.username}</h2>
+            <button className={styles.logout} onClick={handleLogout}>Log Out</button>
         </div>
         )
     }

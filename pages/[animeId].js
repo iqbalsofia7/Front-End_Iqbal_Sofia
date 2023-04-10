@@ -16,7 +16,11 @@ import act3 from './img/act3.jpg'
 import act4 from './img/act4.jpg'
 import act5 from './img/act5.jpg'
 import act6 from './img/act6.jpg'
+import { useSelector, useDispatch } from 'react-redux'
+import { incrementer } from '@/Features/counter/counterSlice.js'
+
 export default function Anime() {
+    const dispatch = useDispatch()  
     const [animeList, setAnimeList] = useState([])
     useEffect(() => {
       fetch('https://api.jikan.moe/v4/anime')
@@ -37,7 +41,7 @@ export default function Anime() {
                     <div>
                     <img className={styles.img} src={item.images.webp.image_url} />
                     <div className={styles.flexx}>
-                    <button className={styles.addtoList}>Add to List</button> 
+                    <button className={styles.addtoList} onClick={()=> dispatch(incrementer())}>Add to Basket</button> 
                     <p className={styles.heart}><AiFillHeart/></p>
                     </div>
                    </div>

@@ -3,8 +3,9 @@ import logo from "./img/logo.svg"
 import styles from '../styles/main.module.css'
 import Image from 'next/image'
 import {AiFillMessage, AiOutlineSearch, AiOutlineShoppingCart} from "react-icons/ai"
-
+import { useSelector, useDispatch } from 'react-redux'
 export default function Header() {
+    const count = useSelector((state)=>state.counter.value)
     return(
         <header>
             <nav className={styles.nav}>
@@ -14,7 +15,9 @@ export default function Header() {
                     </div>
                 </Link>
                 <div>
+                <Link href='/' >
                     <p className={styles.link}>Search</p>
+                </Link>
                     <Link href='./social' >
                         <p className={styles.link}>Social</p>
                     </Link>
@@ -31,7 +34,7 @@ export default function Header() {
                 </div>
                 <div className={styles.alignCenter}>
                 <Link href='/panier'>
-                    <span className={styles.spann}><AiOutlineShoppingCart/><span className={styles.inc}>0</span></span>
+                    <span className={styles.spann}><AiOutlineShoppingCart/><span className={styles.inc}>{count}</span></span>
                 </Link>
                 </div>
             </nav>

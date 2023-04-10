@@ -5,7 +5,9 @@ const counterSlice = createSlice({
     initialState: {
         value: 0,
         cartItems: [],
-        users: []
+        users: [],
+        loggedIn: false,
+        currentUser: null
     },
     
     reducers: {
@@ -32,9 +34,22 @@ const counterSlice = createSlice({
         toutVu(state, action){
             state.value = 0,
             state.cartItems = []
+        },
+        setLoggedIn(state, action) { // réducteur pour mettre à jour le statut de connexion de l'utilisateur
+            state.loggedIn = action.payload;
+        },
+        setCurrentUser(state, action) { // réducteur pour mettre à jour les informations de l'utilisateur connecté
+            state.currentUser = action.payload;
+        },
+        clearCurrentUser(state) { // réducteur pour supprimer les informations de l'utilisateur connecté
+            state.currentUser = null;
+        },
+        addUser(state, action) { // réducteur pour ajouter un utilisateur
+            state.users.push(action.payload);
         }
+
     }
 })
 
-export const { incrementer, supprimerPanier, toutVu } = counterSlice.actions
+export const { incrementer, supprimerPanier, toutVu, setLoggedIn, addUser, setCurrentUser, clearCurrentUser } = counterSlice.actions
 export default counterSlice.reducer

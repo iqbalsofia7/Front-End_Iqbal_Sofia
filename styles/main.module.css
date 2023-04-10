@@ -745,3 +745,18 @@
     justify-content: center;
     color:  #647380;
 }
+.bienvenue {
+    text-align: center;
+    width: 350px;
+    padding: 50px;
+    background: white;
+    border-radius: 50%;
+    margin: auto;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #647380 ;
+    font-weight: 800;
+
+}

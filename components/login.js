@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from "next/link.js";
 import styles from '../styles/main.module.css'
-// import style from '../styles/main.module.css'
+import { useState, useEffect } from 'react';
 
 function login(props) {
+
     return (
         <div className={styles.loginPage}>
             <div className={styles.form}>

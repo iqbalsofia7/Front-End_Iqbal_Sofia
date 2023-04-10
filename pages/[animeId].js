@@ -30,7 +30,10 @@ export default function Anime() {
     const router = useRouter()
     const animeId = router.query.animeId
     const item = animeList.find((el)=> el.mal_id == animeId)
-
+    const handleIncrementer =(itemTitle, img)=>{
+        const newItem = { title: itemTitle , image: img };
+        dispatch(incrementer(newItem));
+      }
     return (
         <div>
             {item ? (
@@ -41,7 +44,7 @@ export default function Anime() {
                     <div>
                     <img className={styles.img} src={item.images.webp.image_url} />
                     <div className={styles.flexx}>
-                    <button className={styles.addtoList} onClick={()=> dispatch(incrementer())}>Add to Basket</button> 
+                    <button className={styles.addtoList} onClick={() => handleIncrementer(item.title, item.images.webp.image_url)}>Add to Basket</button> 
                     <p className={styles.heart}><AiFillHeart/></p>
                     </div>
                    </div>

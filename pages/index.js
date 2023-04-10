@@ -10,6 +10,7 @@ import {FiChevronRight} from "react-icons/fi"
 import {CiFaceSmile} from "react-icons/ci"
 import { useState, useEffect } from 'react';
 import Carrousel from '../components/carrousel.js'
+
 export default function Home({posts}, props) {
   const dispatch = useDispatch()  
   const [animeList, setAnimeList] = useState([])
@@ -53,7 +54,10 @@ export default function Home({posts}, props) {
   favoriteList.length = 5
   scoreList.length = 5
   topList.length = 10
-
+  const handleIncrementer =(itemTitle, img)=>{
+    const newItem = { title: itemTitle , image: img };
+    dispatch(incrementer(newItem));
+  }
 
   return (
     <>
@@ -211,7 +215,7 @@ a dark mode.</p>
           <img className={styles.img} src={anime.images.webp.image_url} />
           </Link>
           <p  className={styles.width}>{anime.title}</p>
-          <span className={styles.cart}  onClick={()=> dispatch(incrementer())}><AiOutlineShoppingCart/></span>
+          <span className={styles.cart}  onClick={() => handleIncrementer(anime.title, anime.images.webp.image_url)}><AiOutlineShoppingCart/></span>
 
           <div className={styles.none}>
               <h5>{anime.type}  {anime.status} </h5>
@@ -236,7 +240,7 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          <span className={styles.cart}  onClick={()=> dispatch(incrementer())}><AiOutlineShoppingCart/></span>
+          <span className={styles.cart}  onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url)} ><AiOutlineShoppingCart/></span>
           <div className={styles.none}>
               <h5>{anima.type}  {anima.status} </h5>
               <p>{anima.genres.map((item)=>(<span className={styles.spanBadges}>{item.name}</span>))}</p>
@@ -260,7 +264,7 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          <span className={styles.cart}  onClick={()=> dispatch(incrementer())}><AiOutlineShoppingCart/></span>
+          <span className={styles.cart}  onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url)}><AiOutlineShoppingCart/></span>
 
           <div className={styles.none}>
               <h5>{anima.type}  {anima.status} </h5>
@@ -285,7 +289,7 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          <span className={styles.cart}  onClick={()=> dispatch(incrementer())}><AiOutlineShoppingCart/></span>
+          <span className={styles.cart}  onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url)}><AiOutlineShoppingCart/></span>
 
             <div className={styles.none}>
               <h5>{anima.type}  {anima.status} </h5>
@@ -306,30 +310,30 @@ a dark mode.</p>
       {topList.map((anime, index) => {
         return(
         <Link href={`/${anime.mal_id}`}>
-        <div key={index} className={styles.allTop} >
-          <h4 className={styles.number}>#{index+1}</h4>
-          <div className={styles.cardRank}>
-          <div className={styles.flex}>
-            <img className={styles.imgRank} src={anime.images.webp.small_image_url} />
-            <div className={styles.bigWidth}>
-            <p className={styles.width}>{anime.title}</p>
-            <p className={styles.badges}>{anime.genres.map((item)=>(<span>{item.name}</span>))}</p> 
+          <div key={index} className={styles.allTop} >
+            <h4 className={styles.number}>#{index+1}</h4>
+            <div className={styles.cardRank}>
+            <div className={styles.flex}>
+              <img className={styles.imgRank} src={anime.images.webp.small_image_url} />
+              <div className={styles.bigWidth}>
+              <p className={styles.width}>{anime.title}</p>
+              <p className={styles.badges}>{anime.genres.map((item)=>(<span>{item.name}</span>))}</p> 
+              </div>
+            </div>
+            <div>
+              <CiFaceSmile className={styles.green}/>
+              <p className={styles.lightGrey}> {anime.members} users</p>
+            </div>  
+            <div>
+              <p className={styles.greyColor}> {anime.type}</p>
+              <p className={styles.lightGrey}> {anime.episodes} episodes</p>
+            </div>  
+            <div>
+                <p className={styles.greyColor}>{anime.season} {anime.year }</p>
+                <p className={styles.lightGrey}>{anime.status}</p>
+            </div> 
             </div>
           </div>
-          <div>
-            <CiFaceSmile className={styles.green}/>
-            <p className={styles.lightGrey}> {anime.members} users</p>
-          </div>  
-          <div>
-            <p className={styles.greyColor}> {anime.type}</p>
-            <p className={styles.lightGrey}> {anime.episodes} episodes</p>
-          </div>  
-          <div>
-              <p className={styles.greyColor}>{anime.season} {anime.year }</p>
-              <p className={styles.lightGrey}>{anime.status}</p>
-          </div> 
-          </div>
-        </div>
         </Link>
       )})} 
           

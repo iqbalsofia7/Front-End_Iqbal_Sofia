@@ -668,3 +668,80 @@
 .lightGrey {
     color: #8BA0B2
 } */
+
+
+
+.imgPanier {
+    width: 150px;
+    height: 250px;
+    border-radius: 5px;
+    margin: 10px
+}
+.article {
+    background: white;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 220px
+}
+.article > div > p {
+    /* width: 200px; */
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 0px 10px 5px 10px;
+}
+.delete {
+    margin: auto;
+    text-align: center;
+    width: 50px;
+    padding-bottom: 10px;
+    cursor: pointer
+}
+.all {
+    display: flex;
+    /* flex-direction: column; */
+    margin: auto;
+    justify-content: center;
+    width: 85%;
+    flex-wrap: wrap
+}
+.titlePanier {
+    letter-spacing: 0px;
+    font-weight: 800;
+    color: #647380;
+    margin: 50px 10px 10px 100px
+}
+.padd {
+    padding: 00px 10px 10px 10px;
+    color: #647380;
+    font-weight: 500;
+}
+.toutVu {
+    padding: 10px 15px;
+    width: auto;
+    background: #437DFE;
+    color: white;
+    margin: auto;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-weight: 800
+}
+.ttvu {
+    display: flex;
+    justify-content: center;
+
+}
+.rien {
+    width: 50vw;
+    height: 50vh;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  #647380;
+}

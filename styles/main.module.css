@@ -6,7 +6,9 @@
     margin: 50px 100px;
     padding: 20px 50px 80px 50px;
     border-radius: 10px;
-    position: relative
+    position: relative;
+    flex-wrap: wrap;
+    width: auto
 }
 .platform > div > h2, .platform > div > p {
     text-align: center;
@@ -18,6 +20,7 @@
     line-height: 22px;
     color: #5a6e83;
 }
+
 .item > div > div > p {
     color: #5a6e83;
 }
@@ -286,7 +289,8 @@
     border-radius: 5px;
     /* width: 300px */
     justify-content: space-around;
-    padding: 20px 100px
+    padding: 20px 100px;
+    flex-wrap: wrap
 }
 .genres > div > p {
     padding: 5px 0px;
@@ -642,8 +646,10 @@
 .slides {
     margin: auto;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+    flex-wrap: wrap;    
 }
+
 .carrouselImg {
     width: 250px;
     height: 350px;

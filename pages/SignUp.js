@@ -8,6 +8,10 @@ function Signup(props) {
     const loggedIn = useSelector((state)=>state.counter.loggedIn)
     const currentUser = useSelector((state) => state.counter.currentUser);
     const dispatch = useDispatch();
+    const [check, setCheck] = useState(true)
+    const toCheck =()=>{
+        setCheck(!check)
+    }
     const [formValues, setFormValues] = useState({
         email: '',
         username: '',
@@ -23,7 +27,12 @@ function Signup(props) {
             const { email, username, password } = formValues;
             const newUser = { email, username, password };
             dispatch(addUser(newUser));
-            dispatch(setLoggedIn(true));
+            if ( formValues.email.length > 1 && formValues.username.length > 1 && formValues.password.length > 1 && formValues.password == formValues.confirmPassword && check==true) {
+                   dispatch(setLoggedIn(true));
+            } else {
+                alert('Merci de remplir tous les champs pour compléter votre inscription')
+            }
+         
         }
         const handleLogout = () => {
             dispatch(setLoggedIn(false));
@@ -39,7 +48,7 @@ function Signup(props) {
                 <input type='password' placeholder='Password' required name='password' value={formValues.password} onChange={handleInputChange} />
                 <input type='password' placeholder='Confirm Password' required name='confirmPassword' value={formValues.confirmPassword} onChange={handleInputChange} />
                 <div className={styles.grey}>
-                <input type='checkbox' /><span>You agree to our terms of service</span>
+                <input type='checkbox' checked={check} onClick={toCheck} /><span>You agree to our terms of service</span>
                 </div>
                 <button onClick={handleSignup}>Sign Up</button>
                 <p className={styles.grey2}>Login - Resend Verification Email</p>

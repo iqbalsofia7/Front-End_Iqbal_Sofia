@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react';
 import Carrousel from '../components/carrousel.js'
 
 export default function Home({posts}, props) {
+  const loggedIn = useSelector((state)=>state.counter.loggedIn)
   const dispatch = useDispatch()  
   const [animeList, setAnimeList] = useState([])
   useEffect(() => {
@@ -63,7 +64,7 @@ export default function Home({posts}, props) {
     const newItem = { title: itemTitle , image: img, mal_id: id };
     dispatch(incrementerFav(newItem));
   }
-  const loggedIn = useSelector((state)=>state.counter.loggedIn)
+  // const loggedIn = useSelector((state)=>state.counter.loggedIn)
 
   return (
     <>
@@ -77,6 +78,8 @@ export default function Home({posts}, props) {
 {animeList ?
       <main className='all'>
         <Carrousel />
+
+        {loggedIn == false ?
         <div className={styles.platform}>
 
           <div>
@@ -138,7 +141,7 @@ a dark mode.</p>
               <button className={styles.button}>Join Now </button>
             </Link>
           </div>
-        </div>
+        </div> : null }
 
       <div className={styles.genres}>
         <div>

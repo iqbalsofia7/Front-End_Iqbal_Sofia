@@ -21,6 +21,7 @@ import { incrementer, incrementerFav } from '@/Features/counter/counterSlice.js'
 import Head from 'next/head'
 
 export default function Anime() {
+    const loggedIn = useSelector((state)=>state.counter.loggedIn)
     const dispatch = useDispatch()  
     const [animeList, setAnimeList] = useState([])
     useEffect(() => {
@@ -55,7 +56,7 @@ export default function Anime() {
                     <div>
                     <img className={styles.img} src={item.images.webp.image_url} />
                     <div className={styles.flexx}>
-                    <button className={styles.addtoList} onClick={() => handleIncrementer(item.title, item.images.webp.image_url)}>Add to Basket</button> 
+                        {loggedIn == true ? <button className={styles.addtoList} onClick={() => handleIncrementer(item.title, item.images.webp.image_url)}>Add to Basket</button>: null} 
                     <p className={styles.heart}  onClick={() => handleIncrementerFav(item.title, item.images.webp.image_url, item.mal_id)} ><AiFillHeart/></p>
                     </div>
                    </div>

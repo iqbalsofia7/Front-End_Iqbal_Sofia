@@ -216,10 +216,12 @@ a dark mode.</p>
         </div>
        
       </div>
-      { searchValue.length >= 1 ? 
-       <p className={styles.bdges}>Search 
-       : 
-       {searchValue}</p> : null }
+       <div className={styles.pding}>
+      {searchValue.length >= 1 ? <span className={styles.badgg}>Search : {searchValue}</span> : null}
+      {selectedGenre == '' ? null :  <span className={styles.badgg}>{selectedGenre}</span> }
+      {selectedYear == '' ? null :  <span className={styles.badgg}>{selectedYear}</span> }
+      {selectedSeason == '' ? null :  <span className={styles.badgg}>{selectedSeason}</span> }
+      </div> 
       <h3 className={styles.titleBig}>TRENDING NOW</h3>
       <div className={styles.cards}>
       {rankList.map((anime) => {

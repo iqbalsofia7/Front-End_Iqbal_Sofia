@@ -252,10 +252,17 @@
     color: #437DFE;
     cursor: pointer;
 }
-
-
-
-
+.pding{
+    margin-left: 100px ;
+    display: flex;
+}
+.badgg {
+    color: white;
+    background: #437DFE;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px
+}
 .searchInput {
     background: white;
     border-radius: 10px;
@@ -874,10 +881,9 @@
 
 
 .bdges {
-    width: max-content;
-    height: auto;
+    /* width: max-content; */
+    /* height: auto; */
     padding: 5px;
-    margin-left: 100px;
     background: #437DFE;
     color: white;
     border-radius: 5px;

@@ -221,7 +221,7 @@ a dark mode.</p>
           <img className={styles.img} src={anime.images.webp.image_url} />
           </Link>
           <p  className={styles.width}>{anime.title}</p>
-          { loggedIn == false ? 
+          { loggedIn == true ? 
           <span className={styles.cart} onClick={() => handleIncrementer(anime.title, anime.images.webp.image_url, anime.mal_id)}><AiOutlineShoppingCart/></span>
           :
           <span className={styles.cartt} onClick={() => handleIncrementerFav(anime.title, anime.images.webp.image_url, anime.mal_id)}><AiFillHeart /></span>
@@ -250,7 +250,7 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          { loggedIn == false ? 
+          { loggedIn == true ? 
           <span className={styles.cart} onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiOutlineShoppingCart/></span>
           :
           <span className={styles.cartt} onClick={() => handleIncrementerFav(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiFillHeart /></span>
@@ -279,7 +279,7 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          { loggedIn == false ? 
+          { loggedIn == true ? 
           <span className={styles.cart} onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiOutlineShoppingCart/></span>
           :
           <span className={styles.cartt} onClick={() => handleIncrementerFav(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiFillHeart /></span>
@@ -308,7 +308,7 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          { loggedIn == false ? 
+          { loggedIn == true ? 
           <span className={styles.cart} onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiOutlineShoppingCart/></span>
           :
           <span className={styles.cartt} onClick={() => handleIncrementerFav(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiFillHeart /></span>

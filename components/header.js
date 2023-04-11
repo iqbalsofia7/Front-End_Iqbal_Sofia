@@ -45,16 +45,19 @@ export default function Header(props) {
                         </Link>
                     </div>
                     <div className={styles.alignCenter}>
-                        <Link href='/panier'>
-                            <span className={styles.spann}><AiOutlineShoppingCart/><span className={styles.inc}>{count}</span></span>
-                        </Link>
+                        <Link href='/favoris'>
+                        <span className={styles.heartF}><AiFillHeart /> <span className={styles.incc}>{countFav}</span></span>
+                        </Link> 
                     </div>
                 </div>) 
                 :   
-                (<div className={styles.aliCenter}>                    
+                (<div className={styles.aliCenter}>
                     <Link href='/favoris'>
                         <span className={styles.heartF}><AiFillHeart /> <span className={styles.incc}>{countFav}</span></span>
-                    </Link> 
+                    </Link>                     
+                    <Link href='/panier'>
+                        <span className={styles.spann}><AiOutlineShoppingCart/><span className={styles.inc}>{count}</span></span>
+                    </Link>
                     <div>
                     <button className={styles.loginButtonn} onClick={() => {props.changeLog2; handleLogout()}}>Log Out</button>
                     </div>

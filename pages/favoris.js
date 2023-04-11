@@ -21,7 +21,6 @@ export default function Favoris() {
             (<div className={styles.all}> 
                 {animeToWatch.map((anime, index)=>{
                     return(
-                   
                     <div key={index} className={styles.article}>
                         <div className={styles.padd}> 
                         <Link href={`/${anime.mal_id}`}>

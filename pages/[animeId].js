@@ -49,7 +49,7 @@ export default function Anime() {
                     <img className={styles.img} src={item.images.webp.image_url} />
                     <div className={styles.flexx}>
                     <button className={styles.addtoList} onClick={() => handleIncrementer(item.title, item.images.webp.image_url)}>Add to Basket</button> 
-                    <p className={styles.heart}  onClick={() => handleIncrementerFav(item.title, item.images.webp.image_url)} ><AiFillHeart/></p>
+                    <p className={styles.heart}  onClick={() => handleIncrementerFav(item.title, item.images.webp.image_url, item.mal_id)} ><AiFillHeart/></p>
                     </div>
                    </div>
 

@@ -263,6 +263,7 @@
     padding: 5px 10px;
     display: flex;
     align-items: center;
+    outline: none
 }
 .searchInput > input {
     border:none;
@@ -869,4 +870,15 @@
     font-size: 12px;
     padding-left: 30px;
     padding-bottom: 10px
+}
+
+
+.bdges {
+    width: max-content;
+    height: auto;
+    padding: 5px;
+    margin-left: 100px;
+    background: #437DFE;
+    color: white;
+    border-radius: 5px;
 }

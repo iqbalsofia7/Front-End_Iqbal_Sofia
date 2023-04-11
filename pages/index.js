@@ -211,8 +211,12 @@ a dark mode.</p>
             <option value="4">On saura jamais</option>
           </select>
         </div>
+       
       </div>
-
+      { searchValue.length >= 1 ? 
+       <p className={styles.bdges}>Search 
+       : 
+       {searchValue}</p> : null }
       <h3 className={styles.titleBig}>TRENDING NOW</h3>
       <div className={styles.cards}>
       {rankList.map((anime) => {
@@ -223,8 +227,10 @@ a dark mode.</p>
           </Link>
           <p  className={styles.width}>{anime.title}</p>
           { loggedIn == true ? 
+          <span>
+          <span className={styles.cartt} onClick={() => handleIncrementerFav(anime.title, anime.images.webp.image_url, anime.mal_id)}><AiFillHeart /></span>
           <span className={styles.cart} onClick={() => handleIncrementer(anime.title, anime.images.webp.image_url, anime.mal_id)}><AiOutlineShoppingCart/></span>
-          :
+          </span>:
           <span className={styles.cartt} onClick={() => handleIncrementerFav(anime.title, anime.images.webp.image_url, anime.mal_id)}><AiFillHeart /></span>
           }
 

@@ -51,7 +51,6 @@ function Signup(props) {
         return(
         <div className={styles.loginPage}>
             <h2 className={styles.bienvenue}>Welcome {formValues.username}</h2>
-            <button className={styles.logout} onClick={handleLogout}>Log Out</button>
         </div>
         )
     }

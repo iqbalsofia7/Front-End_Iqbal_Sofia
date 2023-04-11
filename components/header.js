@@ -10,6 +10,7 @@ import { addUser, setLoggedIn, clearCurrentUser   } from '../Features/counter/co
 export default function Header(props) {
     const dispatch = useDispatch()
     const count = useSelector((state)=>state.counter.value)
+    const countFav = useSelector((state)=>state.counter.valueFav)
     const loggedIn = useSelector((state)=>state.counter.loggedIn)
     const handleLogout = () => {
         dispatch(setLoggedIn(false));
@@ -50,17 +51,15 @@ export default function Header(props) {
                     </div>
                 </div>) 
                 :   
-                (<div>                    
+                (<div className={styles.aliCenter}>                    
                     <Link href='/favoris'>
-                        <span className={styles.heartF}><AiFillHeart /><span className={styles.inc}>{count}</span></span>
+                        <span className={styles.heartF}><AiFillHeart /> <span className={styles.incc}>{countFav}</span></span>
                     </Link> 
                     <div>
-                        <button className={styles.loginButtonn} onClick={props.changeLog2, handleLogout}>Log Out</button>
+                    <button className={styles.loginButtonn} onClick={() => {props.changeLog2; handleLogout()}}>Log Out</button>
                     </div>
-
                 </div>)
                 }
-
             </nav>
         </header>
     )

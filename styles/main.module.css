@@ -177,6 +177,10 @@
     border-radius: 2px;
     border-radius: 5px
 }
+.heartFF {
+    color: white;
+    color: red
+}
 .alignCenter {
     display: flex;
     justify-content: center;
@@ -208,6 +212,24 @@
     display: flex;
     justify-content: center;
     align-items: center
+}
+.incc {
+    color: white;
+    background: #437DFE;
+    position: absolute;
+    font-size: 13px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+    top: -5px;
+    right: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 .nav {  
     display: flex;
@@ -326,6 +348,26 @@
     padding: 5px;
     right: 5px;
     font-weight: 800;
+}
+.cartt {
+    position: absolute;
+    top: 5px;
+    color: white;
+    font-size: 30px;
+    background: #99ADBD;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    right: 5px;
+    font-weight: 800;
+}
+.cartt:hover {
+    color: red;
+    background: white
 }
 .cart:hover {
     background: #437DFE;
@@ -531,7 +573,7 @@
 }
 .heart {
     color: white;
-    background: red;
+    background: #8BA0B2;
     height: 35px;
     width: 35px;
     padding: 5px;
@@ -540,9 +582,11 @@
     margin-right: 0px;
     font-size: 20px;
     text-align: center;
+    font-size: 22px
 }
 .heart:hover {
-    color: black;
+    color:  red;
+    background: white
 }
 .h4 {
     width: 200px;
@@ -792,9 +836,15 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    height: 60px;
-    font-size: 25px
+    height: auto;
+    font-size: 25px;
+    position: relative;
+
 }
 .heartF:hover {
     color: red;
+}
+.aliCenter{
+    display: flex;
+    align-items: center;
 }

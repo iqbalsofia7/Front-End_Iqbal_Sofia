@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import styles from '@/styles/main.module.css'
 import Link from 'next/link.js'
+import {AiFillHeart} from "react-icons/ai"
 import { useSelector, useDispatch } from 'react-redux'
-import { incrementer } from '@/Features/counter/counterSlice.js'
+import { incrementer, incrementerFav } from '@/Features/counter/counterSlice.js'
 import {FaMobile, FaPaintBrush} from "react-icons/fa"
 import {AiFillMessage, AiOutlineSearch, AiOutlineShoppingCart} from "react-icons/ai"
 import {BiNetworkChart} from "react-icons/bi"
@@ -54,10 +55,15 @@ export default function Home({posts}, props) {
   favoriteList.length = 5
   scoreList.length = 5
   topList.length = 10
-  const handleIncrementer =(itemTitle, img)=>{
-    const newItem = { title: itemTitle , image: img };
+  const handleIncrementer =(itemTitle, img, id)=>{
+    const newItem = { title: itemTitle , image: img, mal_id: id };
     dispatch(incrementer(newItem));
   }
+  const handleIncrementerFav =(itemTitle, img, id)=>{
+    const newItem = { title: itemTitle , image: img, mal_id: id };
+    dispatch(incrementerFav(newItem));
+  }
+  const loggedIn = useSelector((state)=>state.counter.loggedIn)
 
   return (
     <>
@@ -215,7 +221,11 @@ a dark mode.</p>
           <img className={styles.img} src={anime.images.webp.image_url} />
           </Link>
           <p  className={styles.width}>{anime.title}</p>
-          <span className={styles.cart}  onClick={() => handleIncrementer(anime.title, anime.images.webp.image_url)}><AiOutlineShoppingCart/></span>
+          { loggedIn == false ? 
+          <span className={styles.cart} onClick={() => handleIncrementer(anime.title, anime.images.webp.image_url, anime.mal_id)}><AiOutlineShoppingCart/></span>
+          :
+          <span className={styles.cartt} onClick={() => handleIncrementerFav(anime.title, anime.images.webp.image_url, anime.mal_id)}><AiFillHeart /></span>
+          }
 
           <div className={styles.none}>
               <h5>{anime.type}  {anime.status} </h5>
@@ -240,7 +250,12 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          <span className={styles.cart}  onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url)} ><AiOutlineShoppingCart/></span>
+          { loggedIn == false ? 
+          <span className={styles.cart} onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiOutlineShoppingCart/></span>
+          :
+          <span className={styles.cartt} onClick={() => handleIncrementerFav(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiFillHeart /></span>
+
+          }
           <div className={styles.none}>
               <h5>{anima.type}  {anima.status} </h5>
               <p>{anima.genres.map((item)=>(<span className={styles.spanBadges}>{item.name}</span>))}</p>
@@ -264,8 +279,12 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          <span className={styles.cart}  onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url)}><AiOutlineShoppingCart/></span>
+          { loggedIn == false ? 
+          <span className={styles.cart} onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiOutlineShoppingCart/></span>
+          :
+          <span className={styles.cartt} onClick={() => handleIncrementerFav(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiFillHeart /></span>
 
+          }
           <div className={styles.none}>
               <h5>{anima.type}  {anima.status} </h5>
               <p>{anima.genres.map((item)=>(<span className={styles.spanBadges}>{item.name}</span>))}</p>
@@ -289,8 +308,12 @@ a dark mode.</p>
           <img className={styles.img} src={anima.images.jpg.image_url} />
           </Link>
           <p  className={styles.width}>{anima.title}</p>
-          <span className={styles.cart}  onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url)}><AiOutlineShoppingCart/></span>
+          { loggedIn == false ? 
+          <span className={styles.cart} onClick={() => handleIncrementer(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiOutlineShoppingCart/></span>
+          :
+          <span className={styles.cartt} onClick={() => handleIncrementerFav(anima.title, anima.images.webp.image_url, anima.mal_id)}><AiFillHeart /></span>
 
+          }
             <div className={styles.none}>
               <h5>{anima.type}  {anima.status} </h5>
               <p>{anima.genres.map((item)=>(<span className={styles.spanBadges}>{item.name}</span>))}</p>

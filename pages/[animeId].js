@@ -17,7 +17,7 @@ import act4 from './img/act4.jpg'
 import act5 from './img/act5.jpg'
 import act6 from './img/act6.jpg'
 import { useSelector, useDispatch } from 'react-redux'
-import { incrementer } from '@/Features/counter/counterSlice.js'
+import { incrementer, incrementerFav } from '@/Features/counter/counterSlice.js'
 
 export default function Anime() {
     const dispatch = useDispatch()  
@@ -34,6 +34,10 @@ export default function Anime() {
         const newItem = { title: itemTitle , image: img };
         dispatch(incrementer(newItem));
       }
+    const handleIncrementerFav =(itemTitle, img)=>{
+    const newItem = { title: itemTitle , image: img };
+    dispatch(incrementerFav(newItem));
+    }
     return (
         <div>
             {item ? (
@@ -45,7 +49,7 @@ export default function Anime() {
                     <img className={styles.img} src={item.images.webp.image_url} />
                     <div className={styles.flexx}>
                     <button className={styles.addtoList} onClick={() => handleIncrementer(item.title, item.images.webp.image_url)}>Add to Basket</button> 
-                    <p className={styles.heart}><AiFillHeart/></p>
+                    <p className={styles.heart}  onClick={() => handleIncrementerFav(item.title, item.images.webp.image_url)} ><AiFillHeart/></p>
                     </div>
                    </div>
 

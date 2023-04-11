@@ -657,6 +657,21 @@
     justify-content: center;
     align-items: center
 }
+.loader {
+    border: 16px solid #f3f3f3; /* couleur de la bordure */
+    border-top: 16px solid #3498db; /* couleur de la bordure du haut */
+    border-radius: 50%; /* forme arrondie */
+    width: 120px; /* largeur de l'animation */
+    height: 120px; /* hauteur de l'animation */
+    animation: spin 2s linear infinite; /* durée, type d'animation et nombre de répétitions */
+    margin: auto; /* centre l'animation horizontalement */
+    margin-top: 200px
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); } /* commence à 0° */
+    100% { transform: rotate(360deg); } /* termine à 360° */
+}
 
 
 .right {
@@ -848,4 +863,10 @@
 .aliCenter{
     display: flex;
     align-items: center;
+}
+.redd {
+    color: red;
+    font-size: 12px;
+    padding-left: 30px;
+    padding-bottom: 10px
 }

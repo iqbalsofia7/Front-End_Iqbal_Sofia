@@ -214,7 +214,7 @@ export default function Anime() {
 
                 </div>
             ) : (
-            <div className={styles.loading}>Loading...</div>
+            <div className={styles.loader}></div>
             )}
         </div>
         );

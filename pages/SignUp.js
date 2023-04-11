@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, setLoggedIn, clearCurrentUser   } from '../Features/counter/counterSlice.js';
 
-function Signup(props) {
+export default function SignUp(props) {
     const loggedIn = useSelector((state)=>state.counter.loggedIn)
     const currentUser = useSelector((state) => state.counter.currentUser);
     const dispatch = useDispatch();
@@ -28,25 +28,43 @@ function Signup(props) {
             const newUser = { email, username, password };
             dispatch(addUser(newUser));
             if ( formValues.email.length > 1 && formValues.username.length > 1 && formValues.password.length > 1 && formValues.password == formValues.confirmPassword && check==true) {
-                   dispatch(setLoggedIn(true));
-            } else {
-                alert('Merci de remplir tous les champs pour compléter votre inscription')
+                dispatch(setLoggedIn(true));
             }
-         
+            if (!formValues.email.includes('@')) {
+                setErreurEmail('Veuillez entrer votre email')
+            }
+            if (formValues.username.length == 0){
+                setErreurUsername('Veuiller entrer votre username')
+            }
+            if (formValues.password.length < 5){
+                setErreurPassword('Veuiller entrer un mot de passe (plus de 5 caractères)')
+            }
+            if (formValues.password != formValues.confirmPassword){
+                setErreurPasswordC("Le mot de passe n'est pas le même")
+            }
         }
-        const handleLogout = () => {
-            dispatch(setLoggedIn(false));
-            dispatch(clearCurrentUser());
-        };
+        const [erreurEmail, setErreurEmail] = useState('')
+        const [erreurUsername, setErreurUsername] = useState('')
+        const [erreurPassword, setErreurPassword] = useState('')
+        const [erreurPasswordC, setErreurPasswordC] = useState('')
+
     if(loggedIn == false) {
     return (
         <div className={styles.loginPage}>
             <div className={styles.form}>
                 <h2>Sign up to AniList</h2>
                 <input type='email' placeholder='Email' required name='email' value={formValues.email} onChange={handleInputChange} />
+                <p className={styles.redd}> {erreurEmail} </p>
+
                 <input type='text' placeholder='Username' required name='username' value={formValues.username} onChange={handleInputChange} />
+                <p className={styles.redd}>{erreurUsername}</p>
+
                 <input type='password' placeholder='Password' required name='password' value={formValues.password} onChange={handleInputChange} />
+                <p className={styles.redd}>{erreurPassword}</p>
+
                 <input type='password' placeholder='Confirm Password' required name='confirmPassword' value={formValues.confirmPassword} onChange={handleInputChange} />
+                <p className={styles.redd}>{erreurPasswordC}</p>
+                
                 <div className={styles.grey}>
                 <input type='checkbox' checked={check} onClick={toCheck} /><span>You agree to our terms of service</span>
                 </div>
@@ -65,4 +83,4 @@ function Signup(props) {
     }
 }
 
-export default Signup;
+

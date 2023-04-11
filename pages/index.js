@@ -74,6 +74,7 @@ export default function Home({posts}, props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+{animeList ?
       <main className='all'>
         <Carrousel />
         <div className={styles.platform}>
@@ -361,7 +362,11 @@ a dark mode.</p>
       )})} 
           
       </div>
-      </main>
+      </main> : 
+
+      <main>
+        <div className={styles.loader}></div>
+      </main>}
     </>
   )
 }

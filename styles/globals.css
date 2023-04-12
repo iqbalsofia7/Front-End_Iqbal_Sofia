@@ -24,7 +24,8 @@ footer {
   margin: auto;
   padding: 20px 40px;
   flex-wrap: wrap;
-  margin-top: 20px
+  margin-top: 20px;
+  margin-bottom: 0
 }
 footer > div > p {
   cursor: pointer;
@@ -39,6 +40,18 @@ footer > div {
   padding: 10px;
   font-weight: 500;
   border-left: 1px solid white;
+}
+@media only screen and (max-width: 426px) {
+  footer {
+    flex-direction: column
+  }
+  footer > div {
+    width: auto;
+    /* background: red; */
+    text-align: center;
+    border-right: 1px solid white;
+
+  }
 }
 a {
   color: inherit;

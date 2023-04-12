@@ -3,6 +3,8 @@ import styles from '../styles/main.module.css'
 import Link from 'next/link.js'
 import Image from 'next/image.js'
 import {AiFillHeart} from "react-icons/ai"
+import {BsTwitter} from "react-icons/bs"
+import {SiCrunchyroll} from "react-icons/si"
 import { useState, useEffect } from 'react';
 import perso1 from './img/perso1.jpg'
 import perso2 from './img/perso2.jpg'
@@ -118,7 +120,55 @@ export default function Anime() {
                                 <p>Pas de Studios</p>
                                 )}
                             </div>
+                        <div className={styles.side}>
+                            <h4>Source </h4>
+                            <p>{item.source}</p>
                         </div>
+                        <div className={styles.side}>
+                            <h4>Native </h4>
+                            <p>{item.title_japanese}</p>
+                        </div>
+                        <div className={styles.side}>
+                            <h4>English </h4>
+                            <p>{item.title}</p>
+                        </div>
+                        <div className={styles.side}>
+                            <h4>Synonyms </h4>
+                            <p>{item.title_synonyms}</p>
+                        </div>
+                        </div>
+                    <div className={styles.allTag}>
+                        <div className={styles.side}>
+                            <h4>Tags </h4>
+                        </div>
+                        <div>
+                            {item.genres.map((item)=>(<p className={styles.spanBbadges}>{item.name}</p>))}
+                        </div>
+
+                        <div className={styles.side}>
+                            <h4>External Links</h4>
+                        </div>
+                        <div className={styles.sidee}>
+                            <p className={styles.twitter}><BsTwitter /></p>
+                            <span>Twitter</span>
+                        </div>
+                        <div className={styles.sidee}>
+                            <p className={styles.twitter}><BsTwitter /></p>
+                            
+                            <span><Link href='https://twitter.com/Eiichiro_Staff/'>Twitter JP </Link></span>
+                           
+                        </div>
+                        <div className={styles.sidee}>
+                            <p className={styles.twitter}><BsTwitter /></p>
+                            <span>Twitter FR</span>
+                        </div>
+                        <div className={styles.sidee}>
+                            <p className={styles.crunchy}><SiCrunchyroll /></p>
+                            <span><Link href='https://www.crunchyroll.com/fr/' >Crunchy Roll</Link></span>
+                        </div>
+                    </div>
+
+
                     </div> {/* left */}
                 <div className={styles.right}>
                     <h4 className={styles.h4}>Characters</h4>

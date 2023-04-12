@@ -65,7 +65,11 @@ export default function Home({posts}, props) {
     dispatch(incrementerFav(newItem));
   }
   // const loggedIn = useSelector((state)=>state.counter.loggedIn)
-
+ const clearAllBadges =()=>{
+      setSelectedGenre('')
+      setSelectedYear('')
+      setSelectedSeason('')
+ }
   return (
     <>
       <Head>
@@ -221,6 +225,7 @@ a dark mode.</p>
       {selectedGenre == '' ? null :  <span className={styles.badgg}>{selectedGenre}</span> }
       {selectedYear == '' ? null :  <span className={styles.badgg}>{selectedYear}</span> }
       {selectedSeason == '' ? null :  <span className={styles.badgg}>{selectedSeason}</span> }
+      { (selectedSeason.length >= 1) || (selectedGenre.length >= 1) || (selectedYear.length >= 1) ? <span className={styles.badggg} onClick={clearAllBadges}>Clear All</span> : null }
       </div> 
       <h3 className={styles.titleBig}>TRENDING NOW</h3>
       <div className={styles.cards}>

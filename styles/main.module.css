@@ -266,6 +266,14 @@
     padding: 5px;
     margin: 5px
 }
+.badggg {
+    color: white;
+    background: #647380 ;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
 .searchInput {
     background: white;
     border-radius: 10px;
@@ -419,11 +427,65 @@
     margin: 2px;
     border-radius: 5px
 }
+.spanBbadges {
+    background: white;
+    padding: 5px 10px;
+    color: #8BA0B2;
+    margin: 2px;
+    border-radius: 5px;
+    margin: 10px 0px
+}
 .card:hover > p {
     color: #01B2C6;
 }
-
-
+.loginbtn {
+    background: #437DFE;
+    color: white;
+    /* font-weight: 600; */
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin: 20px
+}
+.twitter {
+    color: white;
+    background: #437DFE;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    padding: 5px
+}
+.crunchy {
+    color: white;
+    background: orange;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    padding: 5px
+}
+.attention {
+    width: 100vw;
+    height: 88vh;
+    background: #ffff;
+    margin: auto;
+    text-align: center;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 70PX;
+    left: 0;
+    letter-spacing: 0;
+    flex-direction: column
+}
 .card:hover .none {
     display: flex;
     flex-direction: column
@@ -542,6 +604,18 @@
 .side {
     padding: 10px;
     color:  #8BA0B2;
+}
+.sidee {
+    background: white;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    border-radius: 5px;
+    /* justify-content: space-between; */
+}
+.sidee > span {
+    padding-left: 10px;
+    color: #8BA0B2 ;
 }
 .side > h4 {
     color: #647380;
@@ -893,4 +967,9 @@
     background: #437DFE;
     color: white;
     border-radius: 5px;
+}
+
+
+.allTag {
+    margin: 10px
 }

@@ -35,7 +35,7 @@ export default function Panier() {
             (<div className={styles.all}> 
                 {animeToWatch.map((anime, index)=>{
                     return(
-                    <div key={index} className={styles.article}>
+                    <div key={anime.mal_id} className={styles.article}>
                         {/* <img className='imgAchat' src={item.img} alt="" /> */}
                         <div className={styles.padd}>
                         <Link href={`/${anime.mal_id}`}>

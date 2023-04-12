@@ -51,11 +51,11 @@ export default function Anime() {
         <link rel="icon" href="/favicon.ico" />
         </Head>
             {item ? (
-            <div>
+            <div className={styles.klass}>
                 <div className={styles.bg}>
                 </div>
                 <div className={styles.abs}>
-                    <div>
+                    <div className={styles.mq}>
                     <img className={styles.img} src={item.images.webp.image_url} />
                     <div className={styles.flexx}>
                         {loggedIn == true ? <button className={styles.addtoList} onClick={() => handleIncrementer(item.title, item.images.webp.image_url)}>Add to Basket</button>: null} 

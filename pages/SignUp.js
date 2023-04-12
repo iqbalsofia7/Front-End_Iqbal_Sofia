@@ -29,7 +29,7 @@ export default function SignUp(props) {
             const { email, username, password } = formValues;
             const newUser = { email, username, password };
             dispatch(addUser(newUser));
-            if ( formValues.email.length > 1 && formValues.username.length > 1 && formValues.password.length > 1 && formValues.password == formValues.confirmPassword && check==true && captcha != "") {
+            if ( formValues.email.length > 1 && formValues.username.length > 1 && formValues.password.length > 1 && formValues.password == formValues.confirmPassword && check==true && !captcha != "") {
                 dispatch(setLoggedIn(true));
             }
             if (!formValues.email.includes('@')) {
@@ -43,9 +43,6 @@ export default function SignUp(props) {
             }
             if (formValues.password != formValues.confirmPassword){
                 setErreurPasswordC("Le mot de passe n'est pas le même")
-            }
-            if (captcha == ''){
-                alert('Vous devez valider le Captcha')
             }
         }
         const [erreurEmail, setErreurEmail] = useState('')

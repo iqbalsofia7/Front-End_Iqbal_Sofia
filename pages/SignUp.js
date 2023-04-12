@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, setLoggedIn, clearCurrentUser   } from '../Features/counter/counterSlice.js';
 import Head from 'next/head'
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function SignUp(props) {
     const loggedIn = useSelector((state)=>state.counter.loggedIn)
@@ -28,7 +29,7 @@ export default function SignUp(props) {
             const { email, username, password } = formValues;
             const newUser = { email, username, password };
             dispatch(addUser(newUser));
-            if ( formValues.email.length > 1 && formValues.username.length > 1 && formValues.password.length > 1 && formValues.password == formValues.confirmPassword && check==true) {
+            if ( formValues.email.length > 1 && formValues.username.length > 1 && formValues.password.length > 1 && formValues.password == formValues.confirmPassword && check==true && captcha != "") {
                 dispatch(setLoggedIn(true));
             }
             if (!formValues.email.includes('@')) {
@@ -43,12 +44,18 @@ export default function SignUp(props) {
             if (formValues.password != formValues.confirmPassword){
                 setErreurPasswordC("Le mot de passe n'est pas le même")
             }
+            if (captcha == ''){
+                alert('Vous devez valider le Captcha')
+            }
         }
         const [erreurEmail, setErreurEmail] = useState('')
         const [erreurUsername, setErreurUsername] = useState('')
         const [erreurPassword, setErreurPassword] = useState('')
         const [erreurPasswordC, setErreurPasswordC] = useState('')
-
+        const [captcha, setCaptcha] = useState('')
+        const captchaValue =(e)=>{
+            console.log(e)
+        }
     if(loggedIn == false) {
     return (
         <div className={styles.loginPage}>
@@ -75,6 +82,7 @@ export default function SignUp(props) {
                 <div className={styles.grey}>
                 <input type='checkbox' checked={check} onClick={toCheck} /><span>You agree to our terms of service</span>
                 </div>
+                <ReCAPTCHA sitekey="6Lc5HX8lAAAAAIzaVb8JjB-qUe8MyPuWFYn_JlD2" onChange={captchaValue} className={styles.captcha} />
                 <button onClick={handleSignup}>Sign Up</button>
                 <p className={styles.grey2}>Login - Resend Verification Email</p>
             </div>

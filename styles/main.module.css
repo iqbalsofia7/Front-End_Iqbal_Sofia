@@ -100,7 +100,7 @@
 /*LOGIN*/
 .loginPage {
     background:#E9ECF2;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100vw;
     margin: auto;
     display: flex;
@@ -114,10 +114,18 @@
     flex-direction: column;
     width: 30vw;
     background: white;
-    padding: 50px 20px;
+    padding: 20px 20px;
     margin: auto;
-    border-radius: 5px
+    margin: 20px auto;
+    border-radius: 5px;
+    /* height: 100vh */
 
+}
+.captcha {
+    margin: auto;
+    font-size: small;
+    padding-top: 5px;
+    /* height: 200px */
 }
 .form > input{
     padding: 10px;

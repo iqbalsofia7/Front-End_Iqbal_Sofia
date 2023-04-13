@@ -58,22 +58,22 @@ export default function Anime() {
                     <div className={styles.mq}>
                     <img className={styles.img} src={item.images.webp.image_url} />
                     <div className={styles.flexx}>
-                        {loggedIn == true ? <button className={styles.addtoList} onClick={() => handleIncrementer(item.title, item.images.webp.image_url)}>Add to Basket</button>: null} 
+                    {loggedIn == true ? <button className={styles.addtoList} onClick={() => handleIncrementer(item.title, item.images.webp.image_url)}>Add to Basket</button>: null} 
                     <p className={styles.heart}  onClick={() => handleIncrementerFav(item.title, item.images.webp.image_url, item.mal_id)} ><AiFillHeart/></p>
                     </div>
-                   </div>
+                </div>
 
-                   <div className={styles.end}>
-                        <div>
+                <div className={styles.end}>
+                    <div>
                         <h2 className={styles.h2t}>{item.title}</h2>
                         <p className={styles.wwidth}>{item.synopsis}</p>  
-                        </div> 
-                        <div className={styles.linkAnime}>
-                            <p>Overview</p>
-                            <p>Characters</p>
-                            <p>Staff</p>
-                            <p>Stats</p>
-                            <p>Social</p>
+                    </div> 
+                    <div className={styles.linkAnime}>
+                        <p>Overview</p>
+                        <p>Characters</p>
+                        <p>Staff</p>
+                        <p>Stats</p>
+                        <p>Social</p>
                         </div>
                     </div>
                 </div>  

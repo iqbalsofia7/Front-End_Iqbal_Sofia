@@ -36,7 +36,7 @@ function login(props) {
         }
     };
 
-
+    const panier = useSelector((state)=>state.counter.cartItems);
 if (loggedIn == false ){
     return (
 

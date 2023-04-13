@@ -640,15 +640,19 @@
     width: 100vw;
     height: 30vh;
     background: #8BA0B2;
+    background: linear-gradient(to bottom, #8BA0B2 20%, #EDF1F5 90%);
     position: relative;
 }
 
 .abs {
     position: relative;
     top: -10vh;
-    left: 100px; 
+    /* left: 100px;  */
+    margin: 5px 50px;
+    padding: 5px 50px;
+    justify-content: space-around;
     display: flex;
-    gap: 10px;
+    gap: 100px;
 }
 .end {
     display: flex;
@@ -657,13 +661,15 @@
     margin: 10px;
     color:  #647380;
     flex-direction: column;
+    /* background: red; */
+    width: auto
 }
 .linkAnime {
     margin: 10px;
     margin-top: 50px;
     display: flex;
     width: 50vw;
-    justify-content: space-between
+    justify-content: space-between;
 }
 .linkAnime > p {
     margin: 2px;
@@ -675,12 +681,16 @@
     color: black;
     padding: 10px 100px;
     position: relative;
-    top: -50px;
-    left: -10px;
-    display: flex
+    top: -80px;
+    /* left: -10px; */
+    display: flex;
+    /* background: yellow; */
+    /* flex-wrap: wrap */
 }
 .side {
     padding: 10px;
+    /* background: yellow; */
+    margin: auto;
     color:  #8BA0B2;
 }
 .sidee {
@@ -689,6 +699,8 @@
     align-items: center;
     margin: 10px 0px;
     border-radius: 5px;
+    /* background: yellow; */
+
     /* justify-content: space-between; */
 }
 .sidee > span {
@@ -708,10 +720,15 @@
     width: 190px;
     background: white;
     border-radius: 5px;
-    margin: 10px 10px 0px 10px
+    margin: 10px 10px 0px 10px;
+    /* background: red; */
+
+
 }
 .siide {
     padding: 5px;
+    /* background: red; */
+
     font-size: 13px;
     color: #647380;
     background: white;
@@ -728,7 +745,8 @@
 }
 .left {
     /* background: red; */
-    width: min-content
+    width: min-content;
+    margin: auto
 }
 .right {
     padding: 15px;
@@ -789,7 +807,8 @@
     transform: rotate(45deg);
 }
 .h2t {
-    color: white;
+    color: grey;
+    font-weight: 600
 }
 
 .down {
@@ -1068,6 +1087,10 @@
         text-align: center
         /* display: flex; */
     }
+    .down {
+        flex-wrap: wrap;
+        margin: auto;
+    }
     .items {
         margin: auto;
         width: 80vw;
@@ -1100,7 +1123,7 @@
         justify-content: center;
         padding: 10px;
         margin: 10px;
-        text-align: justify
+        text-align: justify;
     }
     .wwidth {
         margin: auto;
@@ -1127,5 +1150,30 @@
         padding: 0
     }
 
-
+    .left > div {
+        width: 80vw;
+        font-size: largeR
+    }
+    .right {
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: center;
+    }
+    .right > div {
+        flex-wrap: wrap;
+        margin: auto;
+        width: 80vw
+    }
+    .h4 {
+        font-size: larger
+    }
+    .right > div > div {
+        width: 80vw
+    }
+    
+}
+@media only screen and (max-width: 500px) and (min-width: 310px) {
+    .wwidth {
+        width: 80vw
+    }
 }

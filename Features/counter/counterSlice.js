@@ -62,7 +62,7 @@ const counterSlice = createSlice({
             state.valueFav = 0,
             state.cartItems2 = []
         },
-        setLoggedIn(state, action) { // réducteur pour mettre à jour le statut de connexion de l'utilisateur
+        setLoggedIn(state, action) { // mettre à jour le statut de connexion de l'utilisateur
             state.loggedIn = action.payload;
         },
         setCurrentUser(state, action) { // réducteur pour mettre à jour les informations de l'utilisateur connecté

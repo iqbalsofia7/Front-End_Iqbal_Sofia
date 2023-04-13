@@ -650,8 +650,8 @@
     position: relative;
     top: -10vh;
     /* left: 100px;  */
-    margin: 5px 50px;
-    padding: 5px 50px;
+    margin: 5px 0px;
+    padding: 5px 100px;
     justify-content: space-around;
     display: flex;
     gap: 100px;
@@ -1202,7 +1202,7 @@
         display: flex;
         /* gap: 20px; */
         padding: 0px 100px;
-        width: 80vw;
+        /* width: 80vw; */
         gap: 20px
     }
     .abs > div{

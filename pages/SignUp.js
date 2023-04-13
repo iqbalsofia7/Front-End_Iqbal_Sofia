@@ -30,7 +30,7 @@ export default function SignUp(props) {
             const newUser = { email, username, password };
             dispatch(addUser(newUser));
             // const panier = []
-            if ( formValues.email.length > 1 && formValues.username.length > 1 && formValues.password.length > 1 && formValues.password == formValues.confirmPassword && check==true && !captcha != "") {
+            if ( formValues.email.length > 1 && formValues.username.length > 1 && formValues.password.length > 1 && formValues.password == formValues.confirmPassword && check==true && (!captcha != "")) {
                 dispatch(setLoggedIn(true));
             }
             if (!formValues.email.includes('@')) {

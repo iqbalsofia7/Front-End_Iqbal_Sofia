@@ -5,8 +5,6 @@ import Footer from '@/components/footer.js'
 import Head from 'next/head'
 import '@/styles/globals.css';
 import { useState, useEffect } from 'react';
-// import localFont from 'next/font/local'
-
 
 export default function App({ Component, pageProps }) {
   

@@ -25,13 +25,15 @@ export default function Header(props) {
                     </div>
                 </Link>
                 <div>
-                    <Link href='/' >
-                        <p className={styles.link}>Search</p>
+                    <Link href='/trendingNow' >
+                        <p className={styles.link}>Trend</p>
                     </Link>
-                    <Link href='./social' >
-                        <p className={styles.link}>Social</p>
+                    <Link href='/allTimePopular' >
+                        <p className={styles.link}>Popular</p>
                     </Link>
-                    <p className={styles.link}>Forum</p>
+                    <Link href='/upcomingNextSeason'>
+                    <p className={styles.link}>Upcoming</p>
+                    </Link>
                 </div>
 
                 { loggedIn == false ? 

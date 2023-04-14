@@ -23,8 +23,8 @@ function login(props) {
         setSignInForm({ ...signInForm, [name]: value });
     };
     const users = useSelector((state) => state.counter.users);
+
     const handleLogin = () => {
-        
         const user = users.find(
             (user) =>
                 user.email == signInForm.email &&

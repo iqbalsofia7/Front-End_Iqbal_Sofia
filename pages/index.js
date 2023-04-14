@@ -64,8 +64,8 @@ export default function Home({posts}, props) {
     const newItem = { title: itemTitle , image: img, mal_id: id };
     dispatch(incrementerFav(newItem));
   }
-  // const loggedIn = useSelector((state)=>state.counter.loggedIn)
- const clearAllBadges =()=>{
+
+  const clearAllBadges =()=>{
       setSelectedGenre('')
       setSelectedYear('')
       setSelectedSeason('')

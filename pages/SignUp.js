@@ -52,7 +52,7 @@ export default function SignUp(props) {
         const [erreurPasswordC, setErreurPasswordC] = useState('')
         const [captcha, setCaptcha] = useState('')
         const captchaValue =(e)=>{
-            console.log(e)
+            setCaptcha(e)
         }
     if(loggedIn == false) {
     return (
